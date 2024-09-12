@@ -64,6 +64,29 @@ def insert_passenger(data, satisfaction_predicted):
 
 def predict_satisfaction(data):
     """Función para predecir la satisfacción del pasajero"""
+
+    # Índices de las columnas que van de 0 a 5 (basados en las posiciones dentro del array de datos)
+    # Estas son las columnas que se deben validar (WiFi, entretenimiento, etc.)
+    satisfaction_columns_indices = [
+        6,  # Inflight wifi service
+        7,  # Departure/Arrival time convenient
+        8,  # Ease of Online booking
+        9,  # Gate location
+        10, # Food and drink
+        11, # Online boarding
+        12, # Seat comfort
+        13, # Inflight entertainment
+        14, # On-board service
+        15, # Leg room service
+        16, # Baggage handling
+        17, # Checkin service
+        18, # Inflight service
+        19  # Cleanliness
+    ]
+
+    # Si todas las columnas relevantes están en 0, predice automáticamente "Neutral or Dissatisfied"
+    if all(data[i] == 0 for i in satisfaction_columns_indices):
+        return "Neutral or Dissatisfied"
     
     # Convertir datos categóricos a números
     categorical_mapping = {
