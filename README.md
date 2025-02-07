@@ -1,4 +1,4 @@
-# ✈️ Proyecto de Predicción de Satisfacción del Cliente de Aerolíneas
+# ✈️ Proyecto de Predicción de Satisfacción del Cliente de una Aerolínea
 
 ## 🎯 Objetivo del Proyecto
 
